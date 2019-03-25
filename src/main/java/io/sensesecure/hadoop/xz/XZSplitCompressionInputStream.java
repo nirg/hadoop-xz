@@ -345,7 +345,7 @@ public class XZSplitCompressionInputStream extends SplitCompressionInputStream {
 
         // Stream Footer
         inData.readFully(streamFooterBuf);
-        if (streamFooterBuf[10] == XZ.FOOTER_MAGIC[0] && streamFooterBuf[11] == XZ.FOOTER_MAGIC[1] && DecoderUtil.isCRC32Valid(streamFooterBuf, 4, 6, 0)) {
+        if (!(streamFooterBuf[10] == XZ.FOOTER_MAGIC[0] && streamFooterBuf[11] == XZ.FOOTER_MAGIC[1] && DecoderUtil.isCRC32Valid(streamFooterBuf, 4, 6, 0))) {
             throw new IOException("XZ Stream Footer is corrupt");
         }
 
