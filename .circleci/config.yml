@@ -30,8 +30,8 @@ jobs:
           name: Test
           command: mvn test
       - store_artifacts:
-          path: /home/circleci/project/target/hadoop-xz-1.5-SNAPSHOT-shaded.jar
-          destination: hadoop-xz-1.5-SNAPSHOT-shaded.jar
+          path: /home/circleci/project/target
+          # destination: hadoop-xz-1.5-SNAPSHOT-shaded.jar
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
